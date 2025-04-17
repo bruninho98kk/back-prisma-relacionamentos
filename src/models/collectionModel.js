@@ -1,17 +1,17 @@
 import prisma from "../../prisma/prisma.js";
 
-class PersonagemModel {
-  // Obter todos os personagens
+class CollectionModel {
+  // Obter todos as colesções
   async findAll() {
-    const personagens = await prisma.personagem.findMany({
+    const colecoes = await prisma.collection.findMany({
       orderBy: {
         createdAt: "desc",
       },
     });
 
-    console.log(personagens);
+    console.log(colecoes);
 
-    return personagens;
+    return colecoes;
   }
 
   // Obter um personagem pelo ID
@@ -107,4 +107,4 @@ class PersonagemModel {
   }
 }
 
-export default new PersonagemModel();
+export default new CollectionModel();

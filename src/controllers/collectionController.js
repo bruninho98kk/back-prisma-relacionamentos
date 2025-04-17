@@ -1,14 +1,14 @@
-import PersonagemModel from "../models/personagemModel.js";
+import CollectionModel from "../models/collectionModel.js";
 
-class PersonagemController {
-  // GET /api/personagens
-  async getAllPersonagens(req, res) {
+class CollectionController {
+  // GET /api/colecoes
+  async getAllCollections(req, res) {
     try {
-      const personagens = await PersonagemModel.findAll();
-      res.json(personagens);
+      const colecoes = await CollectionModel.findAll();
+      res.json(colecoes);
     } catch (error) {
-      console.error("Erro ao buscar personagens:", error);
-      res.status(500).json({ error: "Erro ao buscar personagens" });
+      console.error("Erro ao buscar coleções:", error);
+      res.status(500).json({ error: "Erro ao buscar coleções" });
     }
   }
 
@@ -127,4 +127,4 @@ class PersonagemController {
   }
 }
 
-export default new PersonagemController();
+export default new CollectionController();
