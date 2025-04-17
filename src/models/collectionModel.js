@@ -7,6 +7,10 @@ class CollectionModel {
       orderBy: {
         createdAt: "desc",
       },
+
+      include: {
+        cards: true,
+      },
     });
 
     console.log(colecoes);
@@ -16,13 +20,13 @@ class CollectionModel {
 
   // Obter um personagem pelo ID
   async findById(id) {
-    const personagem = await prisma.personagem.findUnique({
+    const collection = await prisma.personagem.findUnique({
       where: {
         id: Number(id),
       },
     });
 
-    return personagem;
+    return collection;
   }
 
   // Criar uma nova coleção
